@@ -10,6 +10,10 @@
 		{
 			text-align: center;
 		}
+		   .card-header{
+			text-align: center;
+			
+		}
 	</style>
 	</head>
 	<body>
@@ -66,8 +70,8 @@
 				  countrydetails.innerText = "Country Details";
 
 				  var countryname = document.createElement("p");
-				  countryname.setAttribute("class","card-text");
-				  countryname.innerText = "Country Name: " + data[i].name;
+				  countryname.setAttribute("class","card-header");
+				  countryname.innerText = data[i].name;
 
 				  var countryregion = document.createElement("p");
 				  countryregion.setAttribute("class","card-text");
@@ -84,9 +88,10 @@
 					  getWeather(data[i].name);
 				  })
 				  col.appendChild(card);
+				  card.appendChild(countryname);
 				  card.appendChild(img);
 				  card.appendChild(cardbody);
-				  cardbody.append(countrydetails, countryname, countryregion, countrypopulation, cardbut);
+				  cardbody.append(countrydetails, countryregion, countrypopulation, cardbut);
 				  rowId.append(col);
 			  }			
 			  function getWeather(name)
